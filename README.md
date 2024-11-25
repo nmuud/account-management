@@ -22,8 +22,8 @@
 
 
 ## 📑 목차
-1. [프로젝트 주요 기능](#💡-프로젝트-주요-기능)
-2. [API 명세](#💬-api-명세)
+1. [프로젝트 주요 기능](#-프로젝트-주요-기능)
+2. [API 명세](#-api-명세)
    - [계좌 생성](#계좌-생성)
    - [계좌 해지](#계좌-해지)
    - [계좌 확인](#계좌-확인)
@@ -53,18 +53,20 @@
 ## 💬 API 명세
 
 
+<br>
+
 ## 계좌 생성
 
-- **Endpoint**: `POST /account`
-- **기능**: 사용자 ID와 초기 잔액을 입력받아 새로운 계좌를 생성합니다
+- Endpoint: `POST /account`
+- 기능: 사용자 ID와 초기 잔액을 입력받아 새로운 계좌를 생성합니다
   
 ![계좌생성_createAccount_api](https://github.com/user-attachments/assets/60be921c-7827-4911-867e-1bd0857b2c0e)
 
-- **Request**
+- Request
   
 ![계좌생성_request](https://github.com/user-attachments/assets/27d716b9-ba9d-4986-83e0-ee4ef4e02f34)
 
-- **Response**
+- Response
 
 ![계좌생성_response](https://github.com/user-attachments/assets/4f1ba910-518a-4b73-8726-8aa8f20cc524)
 
@@ -82,20 +84,23 @@
 
 
 
+<br>
+
+
 ## 계좌 해지
 
-- **Endpoint**: `DELETE /account`
-- **기능**: 잔액이 0인 계좌를 해지하며, 상태를 `UNREGISTERED`로 변경합니다
+- Endpoint: `DELETE /account`
+- 기능: 잔액이 0인 계좌를 해지하며, 상태를 `UNREGISTERED`로 변경합니다
 
 ![계좌해지_deleteAccount_api](https://github.com/user-attachments/assets/1aa9712f-7f1c-4016-9f18-2e4362f8b2f9)
 
 
-- **Request**
+- Request
 
 ![계좌해지_request](https://github.com/user-attachments/assets/4137bdad-8ed0-42a6-a13b-87bcda3c0a18)
 
 
-- **Response**
+- Response
 
 ![계좌해지_response](https://github.com/user-attachments/assets/b13b1f31-ce03-4525-a843-d02e8db6895d)
 
@@ -126,17 +131,20 @@
 ![계좌해지_오류4_계좌잔액이있는경우](https://github.com/user-attachments/assets/79e78dd8-b472-434a-a829-33cb43cab76c)
 
 
+<br>
+
+
 ## 계좌 확인
 
-- **Endpoint**: `GET /account?user_id={userId}`
-- **기능**: 사용자 ID를 기반으로 현재 사용 중인 계좌 정보를 조회합니다
+- Endpoint: `GET /account?user_id={userId}`
+- 기능: 사용자 ID를 기반으로 현재 사용 중인 계좌 정보를 조회합니다
 
-- **Request**
+- Request
 
 ![계좌확인_getAccount_api_request](https://github.com/user-attachments/assets/1599999f-0ce1-4c01-aa85-2f6931be303d)
 
 
-- **Response**
+- Response
 
 ![계좌확인_response_사용중인계좌만보여줌](https://github.com/user-attachments/assets/609b901c-4bf7-46fa-83f6-f268d0a35f3b)
 
@@ -151,22 +159,24 @@
 
 
 
+<br>
+
 
 ## 잔액 사용
 
-- **Endpoint**: `POST /transaction/use`
-- **기능**: 계좌의 잔액을 차감하고 거래를 기록합니다
+- Endpoint: `POST /transaction/use`
+- 기능: 계좌의 잔액을 차감하고 거래를 기록합니다
 
 
 ![잔액사용_useBalance_api](https://github.com/user-attachments/assets/69237d06-f82f-4c7f-afb4-9305a065e9fc)
 
 
-- **Request**
+- Request
 
 ![잔액사용_request](https://github.com/user-attachments/assets/942b3706-aa12-498e-acb3-88daf01d6dbc)
 
 
-- **Response**
+- Response
 
 ![잔액사용_response](https://github.com/user-attachments/assets/f855d152-852a-424f-9f1f-bfdf09eca796)
 
@@ -183,22 +193,24 @@
 ![잔액사용_오류4_거래금액이잔액보다큰경우](https://github.com/user-attachments/assets/48498249-92a6-476c-9399-d9176729dab6)
 
 
+<br>
+
 
 ## 잔액 사용 취소
 
-- **Endpoint**: `POST /transaction/cancel`
-- **기능**: 기존 거래를 취소하고 거래 금액을 계좌에 복구합니다
+- Endpoint: `POST /transaction/cancel`
+- 기능: 기존 거래를 취소하고 거래 금액을 계좌에 복구합니다
 
 
 ![잔액사용취소_cancelBalnce_api](https://github.com/user-attachments/assets/c3d4ff12-0282-446d-b0eb-a1ac235377ae)
 
 
-- **Request**
+- Request
 
 ![잔액사용취소_request](https://github.com/user-attachments/assets/9de460af-5ab6-4873-88a8-c14858e8e955)
 
 
-- **Response**
+- Response
 
 ![잔액사용취소_response](https://github.com/user-attachments/assets/850fd0a1-4386-4886-8722-d68459776f90)
 
@@ -215,28 +227,30 @@
 ![잔액사용취소_오류2_트랜잭션이해당계좌의거래가아닌경우](https://github.com/user-attachments/assets/5614e380-f348-4b21-9d2d-2c30e51363d5)
 
 
+<br>
+
 ## 거래 확인
 
-- **Endpoint**: `GET /transaction/{transactionId}`
-- **기능**: 특정 거래의 상세 정보를 조회합니다
+- Endpoint: `GET /transaction/{transactionId}`
+- 기능: 특정 거래의 상세 정보를 조회합니다
 
-- **Request (잔액 사용 확인)**
+- Request (잔액 사용 확인)
 
 ![거래확인_잔액사용확인_api](https://github.com/user-attachments/assets/6b585c11-eba8-4676-9859-2f8e690da45e)
 
-- **Response (잔액 사용 확인)**
+- Response (잔액 사용 확인)
 
 ![거래확인_잔액사용확인_response](https://github.com/user-attachments/assets/38e30bd5-2a6f-4216-84a2-28673878925d)
 
 
 
-- **Request (잔액 사용 취소 확인)**
+- Request (잔액 사용 취소 확인)
 
 ![거래확인_잔액사용취소확인_api](https://github.com/user-attachments/assets/ec05a840-da76-403d-b5bb-bd0e48e7d30b)
 
 
 
-- **Response (잔액 사용 취소 확인)**
+- Response (잔액 사용 취소 확인)
 
 ![거래확인_잔액사용취소확인_response](https://github.com/user-attachments/assets/5173a21d-34e8-4e50-918e-09ea063600c2)
 
